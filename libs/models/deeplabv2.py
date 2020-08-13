@@ -14,7 +14,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 from .resnet import _ConvBnReLU, _ResLayer, _Stem
-from .DRN import drn_d_105
 
 from torchvision import models
 from collections import OrderedDict
@@ -64,14 +63,14 @@ class DeepLabV2(nn.Sequential):
                 m.eval()
 
 
-class DeepLabPy_ResNet101(nn.Module, pretrain=False):
+class DeepLabPy_ResNet101(nn.Module):
     """
     DeepLab v2: Dilated ResNet + ASPP
     Output stride is fixed at 8
     """
 
-    def __init__(self):
-        super(DeepLabPy, self).__init__()
+    def __init__(self, pretrain):
+        super(DeepLabPy_ResNet101, self).__init__()
         model = models.resnet101(pretrained=pretrain)
 
 

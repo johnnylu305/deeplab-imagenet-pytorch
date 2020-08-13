@@ -5,5 +5,4 @@ def get_dataset(name):
         "voc": VOC,
         "vocaug": VOCAug,
         "custom": Custom,
-        "voccrf": VOCCRF,
     }[name]

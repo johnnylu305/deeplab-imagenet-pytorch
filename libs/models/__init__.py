@@ -5,8 +5,6 @@ from .deeplabv2 import *
 from .deeplabv3 import *
 from .deeplabv3plus import *
 from .msc import *
-from .DRN import *
-
 
 
 def init_weights(module):
@@ -41,7 +39,7 @@ def DeepLabV2_ResNet101_MSC(n_classes):
     )
 
 
-def DeepLabPy_ResNet101_MSC(pretrain=False):
+def DeepLabPy_ResNet101_MSC(pretrain):
     return MSC(
         base=DeepLabPy_ResNet101(pretrain),
         scales=[0.5, 0.75],

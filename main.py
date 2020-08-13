@@ -27,7 +27,7 @@ from torchnet.meter import MovingAverageValueMeter
 from tqdm import tqdm
 
 from libs.datasets import get_dataset
-from libs.models import DeepLabV2_ResNet101_MSC, DeepLabV2_DRN105_MSC, DeepLabPy_ResNet101_MSC
+from libs.models import DeepLabV2_ResNet101_MSC, DeepLabPy_ResNet101_MSC
 from libs.utils import DenseCRF, PolynomialLR, scores
 
 import scipy.misc
