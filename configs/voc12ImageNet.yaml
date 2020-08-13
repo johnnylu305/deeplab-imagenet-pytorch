@@ -1,0 +1,73 @@
+EXP:
+    ID: voc12
+    OUTPUT_DIR: data
+    EVALUATE_ITER: 50 
+    # assign gpu
+    GPU_IDX: [0, 1]
+
+
+DATASET:
+    NAME: vocaug
+    ROOT: ./VOCdevkit
+    LABELS: ./data/datasets/voc12/labels.txt
+    N_CLASSES: 21
+    IGNORE_LABEL: 255
+    SCALES: [0.5, 0.75, 1.0, 1.25, 1.5]
+    SPLIT:
+        TRAIN: train_aug
+        VAL: val # test
+        TEST: test
+
+DATALOADER:
+    # set NUM_WORKERS to 0 if shm not enough
+    NUM_WORKERS: 5
+
+IMAGE:
+    MEAN:
+        R: 0.45694514
+        G: 0.43669609
+        B: 0.40363202
+    STD:
+        R: 0.27473737
+        G: 0.27164029
+        B: 0.28467983
+    SIZE:
+        BASE: # None
+        TRAIN: 381 #321
+        TEST: 513
+
+MODEL:
+    NAME: DeepLabPy_ResNet101_MSC
+    N_BLOCKS: [3, 4, 23, 3]
+    ATROUS_RATES: [6, 12, 18, 24]
+    # load pretrain weight on imageNet
+    INIT_MODEL: None
+
+
+SOLVER:
+    BATCH_SIZE:
+        # large batch size to train batch norm
+        # recommend batchsize
+        # 1GPU: 11, 13, 26
+        # 2gpu: 22, 26
+        TRAIN: 26 
+        TEST: 1
+    ITER_MAX: 90000 # 30000
+    ITER_SIZE: 1
+    ITER_SAVE: 50
+    ITER_TB: 50
+    LR_DECAY: 10 
+    LR: 0.001
+    MOMENTUM: 0.9
+    OPTIMIZER: sgd
+    POLY_POWER: 0.9
+    WEIGHT_DECAY: 5.0e-4
+    AVERAGE_LOSS: 20
+
+CRF:
+    ITER_MAX: 10
+    POS_W: 3
+    POS_XY_STD: 1
+    BI_W: 4
+    BI_XY_STD: 67
+    BI_RGB_STD: 3
