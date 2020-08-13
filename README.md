@@ -1,4 +1,4 @@
-# Deeplab V2 with the pre-train of ImageNet
+# An unofficial Deeplab V2 with the pre-train weight of ImageNet
 This repository and codes are largely based on and modified from [deeplab-pytorch](https://github.com/kazuto1011/deeplab-pytorch). I highly recommend visiters to visit the GitHub.
 
 ## Downloading the VOC12 dataset
