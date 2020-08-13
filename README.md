@@ -1,9 +1,6 @@
 # Deeplab V2 with the pre-train of ImageNet
 This repository and codes are largely based on and modified from [deeplab-pytorch](https://github.com/kazuto1011/deeplab-pytorch). I highly recommend visiters to visit the GitHub.
 
-## Downloading the drn-105 weights
-[drn-d-105](http://dl.yf.io/drn/)
-
 ## Downloading the VOC12 dataset
 [Visual Object Classes Challenge 2012 (VOC2012)](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/)
 
