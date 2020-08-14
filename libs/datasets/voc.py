@@ -57,6 +57,8 @@ class VOC(_BaseDataset):
         else:
             # make a fake label
             label = np.zeros(image.shape[:2])
+        # bgr to rgb
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         return image_id, image, label
 
 
@@ -91,6 +93,8 @@ class VOCAug(_BaseDataset):
         image = cv2.imread(image_path, cv2.IMREAD_COLOR).astype(np.float32)
         label = np.asarray(Image.open(label_path), dtype=np.int32)
         image = image
+        # bgr to rgb
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         return image_id, image, label
 
 
@@ -108,9 +112,9 @@ class Custom(_BaseDataset):
         self.image_dir = osp.join(self.root, "JPEGImages")
         self.label_dir = osp.join(self.root, "h16") # labels directory
 
-        if self.split in ["train", "trainval", "val", "test", "train_aug"]:
+        if self.split in ["train", "trainval", "val", "train_aug"]:
             file_list = osp.join(
-                self.root, "ImageSets/Segmentation", self.split + ".txt"
+                self.root, "ImageSets/SegmentationAug", self.split + ".txt"
             )
             file_list = tuple(open(file_list, "r"))
             file_list = [id_.rstrip().split(" ") for id_ in file_list]
@@ -127,6 +131,8 @@ class Custom(_BaseDataset):
         image = cv2.imread(image_path, cv2.IMREAD_COLOR).astype(np.float32)
         label = np.asarray(Image.open(label_path), dtype=np.int32)
         image = image 
+        # bgr to rgb
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         return image_id, image, label
 
 

@@ -87,7 +87,7 @@ class _BaseDataset(data.Dataset):
             "borderType": cv2.BORDER_CONSTANT,
         }
         if pad_h > 0 or pad_w > 0:
-            image = cv2.copyMakeBorder(image, value=self.mean_rgb, **pad_kwargs)
+            image = cv2.copyMakeBorder(image, value=self.mean_rgb*255, **pad_kwargs)
             label = cv2.copyMakeBorder(label, value=self.ignore_label, **pad_kwargs)
 
         # Cropping
@@ -116,8 +116,6 @@ class _BaseDataset(data.Dataset):
         if None not in self.mean_rgb:
             # [0, 255] to [0, 1]
             image = image/255.0
-            # bgr to rgb
-            image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
             image = (image-self.mean_rgb)/self.std_rgb
      
         # HWC -> CHW   

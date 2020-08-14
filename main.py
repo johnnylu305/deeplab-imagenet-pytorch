@@ -291,7 +291,8 @@ def train(config_path, cuda):
                             name + "/grad", param.grad, iteration, bins="auto"
                         )
 
-        if iteration % CONFIG.EXP.EVALUATE_ITER == 0 and iteration>=1:
+        if iteration % CONFIG.EXP.EVALUATE_ITER == 0 and iteration>=15000:
+
             print("Evaluation....")
             evaluate(model, writer, iteration, CONFIG)
 
@@ -398,7 +399,7 @@ def test(config_path, model_path, cuda, save=True):
         "label",
     )
     makedirs(label_dir)
-    print("Label dst:", lable_dir)
+    print("Label dst:", label_dir)
 
     preds, gts = [], []
     for image_ids, images, gt_labels in tqdm(
