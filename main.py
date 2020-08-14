@@ -291,7 +291,7 @@ def train(config_path, cuda):
                             name + "/grad", param.grad, iteration, bins="auto"
                         )
 
-        if iteration % CONFIG.EXP.EVALUATE_ITER == 0 and iteration>=20000:
+        if iteration % CONFIG.EXP.EVALUATE_ITER == 0 and iteration>=1:
             print("Evaluation....")
             evaluate(model, writer, iteration, CONFIG)
 
@@ -473,7 +473,7 @@ def crf(config_path, n_jobs):
         root=CONFIG.DATASET.ROOT,
         split=CONFIG.DATASET.SPLIT.VAL,
         ignore_label=CONFIG.DATASET.IGNORE_LABEL,
-        mean_bgr=None,
+        mean_rgb=None,
         augment=False,
     )
     print(dataset)
@@ -578,13 +578,14 @@ def evaluate(model, writer, iteration, CONFIG):
     model.eval()
     model.to(device)
     # Dataset
-    if CONFIG.DATASET.NAME == "h16":
+    if CONFIG.DATASET.NAME == "custom":
         CONFIG.DATASET.NAME = "vocaug"
     dataset = get_dataset(CONFIG.DATASET.NAME)(
         root=CONFIG.DATASET.ROOT,
         split=CONFIG.DATASET.SPLIT.VAL,
         ignore_label=CONFIG.DATASET.IGNORE_LABEL,
-        mean_bgr=(CONFIG.IMAGE.MEAN.B, CONFIG.IMAGE.MEAN.G, CONFIG.IMAGE.MEAN.R),
+        mean_rgb=(CONFIG.IMAGE.MEAN.R, CONFIG.IMAGE.MEAN.G, CONFIG.IMAGE.MEAN.B),
+        std_rgb=(CONFIG.IMAGE.STD.R, CONFIG.IMAGE.STD.G, CONFIG.IMAGE.STD.B),
         augment=False,
     )
 

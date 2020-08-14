@@ -186,7 +186,6 @@ if __name__ == "__main__":
         root="/media/kazuto1011/Extra/VOCdevkit",
         split="train_aug",
         ignore_label=255,
-        mean_bgr=(104.008, 116.669, 122.675),
         year=2012,
         augment=True,
         base_size=None,
