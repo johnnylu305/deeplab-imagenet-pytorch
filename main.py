@@ -291,8 +291,7 @@ def train(config_path, cuda):
                             name + "/grad", param.grad, iteration, bins="auto"
                         )
 
-        if iteration % CONFIG.EXP.EVALUATE_ITER == 0 and iteration>=15000:
-
+        if iteration % CONFIG.EXP.EVALUATE_ITER == 0 and iteration>=10000:
             print("Evaluation....")
             evaluate(model, writer, iteration, CONFIG)
 
@@ -343,7 +342,7 @@ def test(config_path, model_path, cuda, save=True):
         split=CONFIG.DATASET.SPLIT.VAL,
         ignore_label=CONFIG.DATASET.IGNORE_LABEL,
         mean_rgb=(CONFIG.IMAGE.MEAN.R, CONFIG.IMAGE.MEAN.G, CONFIG.IMAGE.MEAN.B),
-        std_rgb=(CONFIG.IMAGE.MEAN.R, CONFIG.IMAGE.MEAN.G, CONFIG.IMAGE.MEAN.B),
+        std_rgb=(CONFIG.IMAGE.STD.R, CONFIG.IMAGE.STD.G, CONFIG.IMAGE.STD.B),
         augment=False,
     )
     print(dataset)
@@ -680,7 +679,7 @@ def finetune(config_path, cuda):
     print("Model:", CONFIG.MODEL.NAME)
 
     # Model setup
-    model = eval(CONFIG.MODEL.NAME)(pretrain=True)
+    model = eval(CONFIG.MODEL.NAME)(pretrain=False)
     print("    Init:", CONFIG.MODEL.INIT_MODEL)
     state_dict = torch.load(CONFIG.MODEL.INIT_MODEL, map_location=lambda storage, loc: storage)
     model.load_state_dict(state_dict)
@@ -699,7 +698,7 @@ def finetune(config_path, cuda):
         params=[
             {
                 "params": get_params(model.module, key="1x"),
-                "lr": 0.1 * CONFIG.SOLVER.LR,
+                "lr": 0.01 * CONFIG.SOLVER.LR,
                 "weight_decay": CONFIG.SOLVER.WEIGHT_DECAY,
             },
             {
