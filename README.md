@@ -1,6 +1,14 @@
 # An unofficial Deeplab V2 with the pre-train weight of ImageNet
 This repository and codes are largely based on and modified from [deeplab-pytorch](https://github.com/kazuto1011/deeplab-pytorch). I highly recommend visiters to visit the GitHub.
 
+Performance on Pascal VOC12
+
+
+| set      | CRF      | mIoU     |
+| :---:    | :---:    |  :---:   |
+| val    |O         | 78.84%   |
+| test      |O         | 79.1%   |
+
 ## Downloading the VOC12 dataset
 [Visual Object Classes Challenge 2012 (VOC2012)](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/)
 
