@@ -39,7 +39,7 @@ python main.py train --config-path configs/voc12ImageNet.yaml
 ```
 
 ## For finetune
-### This mode is still in testing stage.
+- This mode is still in testing stage.
 ```
 python main.py finetune --config-path configs/voc12Finetune.yaml
 ```
