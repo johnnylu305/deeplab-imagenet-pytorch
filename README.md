@@ -56,10 +56,6 @@ python main.py test --config-path configs/voc12Test.yaml
 python main.py crf --config-path configs/voc12Test.yaml --n-jobs 8
 ```
 
-## Performance
-
-It can reach 77% mIoU and 78% mIoU after CRF on Pascal VOC12 val.
-
 ## Further details
 
 [kazuto1011/deeplab-pytorch](https://github.com/kazuto1011/deeplab-pytorch)
