@@ -1,13 +1,31 @@
 # An unofficial Deeplab V2 with the pre-train weight of ImageNet
 This repository and codes are largely based on and modified from [deeplab-pytorch](https://github.com/kazuto1011/deeplab-pytorch). I highly recommend visiters to visit the GitHub.
 
-Performance on Pascal VOC12
-
+## Performance
+- Performance on Pascal VOC12
 
 | set      | CRF      | mIoU     |
 | :---:    | :---:    |  :---:   |
 | val    |O         | 78.8%   |
 | test      |O         | 79.1%   |
+
+## My Environment
+- Operating System:
+  - Ubuntu 16.04.5
+- Memory
+  - 128GB
+- CUDA:
+  - CUDA V10.0.130 
+- GPU:
+  - Tesla v100 30G * 2
+- Nvidia driver:
+  - 418.87.01
+- Python:
+  - python 3.6.8
+- Python package:
+  - tqdm, opencv-python, pydensecrf,...
+- Tensorflow:
+  - pytorch-gpu 1.4.0
 
 ## Downloading the VOC12 dataset
 [Visual Object Classes Challenge 2012 (VOC2012)](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/)
