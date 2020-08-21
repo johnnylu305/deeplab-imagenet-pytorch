@@ -6,7 +6,7 @@ Performance on Pascal VOC12
 
 | set      | CRF      | mIoU     |
 | :---:    | :---:    |  :---:   |
-| val    |O         | 78.84%   |
+| val    |O         | 78.8%   |
 | test      |O         | 79.1%   |
 
 ## Downloading the VOC12 dataset
