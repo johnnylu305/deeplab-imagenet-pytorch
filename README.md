@@ -62,23 +62,29 @@ python main.py test --config-path configs/voc12Test.yaml
 python main.py crf --config-path configs/voc12Test.yaml --n-jobs 8
 ```
 
+## OOM
+- Please try small batch size and image size
+- Disable evaluate during training
+
 ## Further details
 
 [kazuto1011/deeplab-pytorch](https://github.com/kazuto1011/deeplab-pytorch)
 
 ## References
 
-1. L.-C. Chen, G. Papandreou, I. Kokkinos, K. Murphy, A. L. Yuille. DeepLab: Semantic Image
+1. [kazuto1011/deeplab-pytorch](https://github.com/kazuto1011/deeplab-pytorch)
+
+2. L.-C. Chen, G. Papandreou, I. Kokkinos, K. Murphy, A. L. Yuille. DeepLab: Semantic Image
 Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs. *IEEE TPAMI*,
 2018.<br>
 [Project](http://liangchiehchen.com/projects/DeepLab.html) /
 [Code](https://bitbucket.org/aquariusjay/deeplab-public-ver2) / [arXiv
 paper](https://arxiv.org/abs/1606.00915)
 
-2. H. Caesar, J. Uijlings, V. Ferrari. COCO-Stuff: Thing and Stuff Classes in Context. In *CVPR*, 2018.<br>
+3. H. Caesar, J. Uijlings, V. Ferrari. COCO-Stuff: Thing and Stuff Classes in Context. In *CVPR*, 2018.<br>
 [Project](https://github.com/nightrome/cocostuff) / [arXiv paper](https://arxiv.org/abs/1612.03716)
 
-1. M. Everingham, L. Van Gool, C. K. I. Williams, J. Winn, A. Zisserman. The PASCAL Visual Object
+4. M. Everingham, L. Van Gool, C. K. I. Williams, J. Winn, A. Zisserman. The PASCAL Visual Object
 Classes (VOC) Challenge. *IJCV*, 2010.<br>
 [Project](http://host.robots.ox.ac.uk/pascal/VOC) /
 [Paper](http://host.robots.ox.ac.uk/pascal/VOC/pubs/everingham10.pdf)
