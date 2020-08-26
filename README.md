@@ -2,12 +2,18 @@
 This repository and codes are largely based on and modified from [deeplab-pytorch](https://github.com/kazuto1011/deeplab-pytorch). I highly recommend visiters to visit the GitHub.
 
 ## Performance
-- Performance on Pascal VOC12
+- [Performance on Pascal VOC12 (Image size: 381, Batch size: 26)](https://drive.google.com/drive/u/1/folders/1g8faYlBB8DdJdjSdmMhlD_P-8czAzsdb)
 
 | set      | CRF      | mIoU     |
 | :---:    | :---:    |  :---:   |
 | val    |O         | 78.8%   |
 | test      |O         | 79.1%   |
+
+- [Performance on Pascal VOC12 (Image size: 321, Batch size: 12)](https://drive.google.com/drive/u/1/folders/1q0xQDQf5BEvvDXFZA8QX0cGvZENT2K_v)
+
+| set      | CRF      | mIoU     |
+| :---:    | :---:    |  :---:   |
+| val    |O         | 77.02%   |
 
 ## My Environment
 - Operating System:
