@@ -158,6 +158,7 @@ def train(config_path, cuda):
         batch_size=CONFIG.SOLVER.BATCH_SIZE.TRAIN,
         num_workers=CONFIG.DATALOADER.NUM_WORKERS,
         shuffle=True,
+        drop_last = True,
     )
     loader_iter = iter(loader)
 
