@@ -44,12 +44,6 @@ This repository and codes are largely based on and modified from [deeplab-pytorc
 python main.py train --config-path configs/voc12ImageNet.yaml
 ```
 
-## For finetune
-- This mode is still in testing stage.
-```
-python main.py finetune --config-path configs/voc12Finetune.yaml
-```
-
 ## For testing
 
 ```
