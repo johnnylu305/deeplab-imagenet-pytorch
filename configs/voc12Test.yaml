@@ -3,7 +3,7 @@ EXP:
     OUTPUT_DIR: data
     EVALUATE_ITER: 50 
     # assign gpu
-    GPU_IDX: [0, 1]
+    GPU_IDX: [0] #[0, 1]
 
 
 DATASET:
@@ -41,7 +41,7 @@ MODEL:
     N_BLOCKS: [3, 4, 23, 3]
     ATROUS_RATES: [6, 12, 18, 24]
     # load pretrain weight on imageNet
-    INIT_MODEL: data/models/voc12/deeplabpy_resnet101_msc/train_aug/checkpoint_15000.pth 
+    INIT_MODEL: data/models/voc12/deeplabpy_resnet101_msc/train_aug/checkpoint_35750.pth 
 
 
 
