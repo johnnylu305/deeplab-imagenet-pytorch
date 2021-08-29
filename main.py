@@ -31,7 +31,8 @@ from libs.models import DeepLabV2_ResNet101_MSC, DeepLabPy_ResNet101_MSC
 from libs.utils import DenseCRF, PolynomialLR, scores
 
 import scipy.misc
-
+# use oldscipy for scipy.misc.toimage()
+import oldscipy.misc
 
 # ulimit to 2048
 import resource
@@ -428,7 +429,7 @@ def test(config_path, model_path, cuda, save=True):
         gts += list(gt_labels.numpy())
 
         # Pixel-wise labeling
-        scipy.misc.toimage(labels.squeeze(dim=0).cpu().numpy(),
+        oldscipy.misc.toimage(labels.squeeze(dim=0).cpu().numpy(),
                            cmin=0,
                            cmax=255,
                            pal=colors_map,
@@ -544,7 +545,7 @@ def crf(config_path, n_jobs):
         label = np.argmax(prob, axis=0)
 
         # Pixel-wise labeling
-        scipy.misc.toimage(label,
+        oldscipy.misc.toimage(label,
                            cmin=0,
                            cmax=255,
                            pal=colors_map,
