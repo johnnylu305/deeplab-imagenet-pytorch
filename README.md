@@ -18,12 +18,12 @@ This repository and codes are largely based on and modified from [deeplab-pytorc
 ## My Environment
 - Operating System:
   - Ubuntu 16.04.5
-- Memory
-  - 128GB
+<!-- - Memory
+  - 128GB -->
 - CUDA:
   - CUDA V10.0.130 
-- GPU:
-  - Tesla v100 30G * 2
+<!-- - GPU:
+  - Tesla v100 30G * 2 -->
 - Nvidia driver:
   - 418.87.01
 - Python:
