@@ -18,12 +18,8 @@ This repository and codes are largely based on and modified from [deeplab-pytorc
 ## My Environment
 - Operating System:
   - Ubuntu 16.04.5
-<!-- - Memory
-  - 128GB -->
 - CUDA:
   - CUDA V10.0.130 
-<!-- - GPU:
-  - Tesla v100 30G * 2 -->
 - Nvidia driver:
   - 418.87.01
 - Python:
@@ -32,6 +28,9 @@ This repository and codes are largely based on and modified from [deeplab-pytorc
   - tqdm, opencv-python, pydensecrf,...
 - Tensorflow:
   - pytorch-gpu 1.4.0
+
+<!-- - Memory- 128GB -->
+<!-- - GPU:- Tesla v100 30G * 2 -->
 
 ## Downloading the VOC12 dataset
 [Visual Object Classes Challenge 2012 (VOC2012)](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/)
