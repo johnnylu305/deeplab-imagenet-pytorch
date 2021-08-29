@@ -1,8 +1,8 @@
 """
 source code of the old version of scipy
-check https://stackoverflow.com/questions/57545125/attributeerror-module-scipy-misc-has-no-attribute-toimageimport 
+check https://stackoverflow.com/questions/57545125/attributeerror-module-scipy-misc-has-no-attribute-toimage
 """
-numpy as np
+import numpy as np
 from PIL import Image
 
 
