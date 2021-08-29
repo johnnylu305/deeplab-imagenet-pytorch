@@ -34,7 +34,8 @@ This repository and codes are largely based on and modified from [deeplab-pytorc
 
 ## Downloading the VOC12 dataset
 [Visual Object Classes Challenge 2012 (VOC2012)](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/)
-
+## Download the VOC12 augmentation dataset
+- [Semantic Boundaries Dataset and Benchmark](https://www.dropbox.com/s/oeu149j8qtbs1x0/SegmentationClassAug.zip?dl=0)
 
 
 ## For training
