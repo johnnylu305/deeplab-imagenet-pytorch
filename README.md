@@ -26,7 +26,7 @@ This repository and codes are largely based on and modified from [deeplab-pytorc
   - python 3.6.8
 - Python package:
   - tqdm, opencv-python, pydensecrf,...
-- Tensorflow:
+- Pytorch:
   - pytorch-gpu 1.4.0
 
 <!-- - Memory- 128GB -->
